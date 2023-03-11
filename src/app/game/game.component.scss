@@ -1,0 +1,15 @@
+main {
+
+}
+
+.matrixRow {
+    width: 1000px;
+    height: 50px;
+    display: flex;
+}
+
+.matrixCell {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+}
