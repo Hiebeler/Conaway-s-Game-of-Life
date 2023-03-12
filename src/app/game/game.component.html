@@ -1,5 +1,15 @@
 <main>
-    <div class="matrixRow" *ngFor="let i of matrixArray; index as index">
-        <div class="matrixCell" *ngFor="let i of matrixArray[index]"></div>
+    <nav>
+        <button class="startButton" (click)="startGame()">Start</button>
+        <button class="startButton" *ngIf="running" (click)="pauseGame()">Stop</button>
+        <button class="startButton" *ngIf="!running" (click)="resetBoard()">Reset</button>
+    </nav>
+    <div class="board">
+        <div class="matrixRow" *ngFor="let i of matrixArray; index as cell">
+            <div class="matrixCell" *ngFor="let status of matrixArray[cell]; index as row" (click)="clickCell(cell, row)">
+                <div class="aliveCell" *ngIf="status"></div>
+                <div class="deadCell" *ngIf="!status"></div>
+            </div>
+        </div>
     </div>
 </main>
